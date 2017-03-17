@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>draw拖拽</title>
+  <!--2017/3/4-->
+  <style>
+	*{padding:0px;margin:0px;}
+	#box,#wrapBox{width:100px;height:100px;background-color:red;position:relative;margin:10px;}
+	#innerBox{width:30px;height:30px;position:absolute;right:0px;bottom:0px;background:yellow;}
+  </style>
+ </head>
+ <body>
+	<div id="box"></div>
+	<div id="wrapBox">
+		<div id="innerBox"></div>
+	</div>
+	<script type="text/javascript" src="js/sea.js"></script>
+	<script type="text/javascript">
+		/*第一种方式*/
+		seajs.use("./js/main.js")
+		
+		/*第二种方式*/
+		/*
+			seajs.use("./js/draw.js",text);
+			function text(req){//req相当于draw中的exports
+				var boxDom = document.getElementById("box");
+				req.draw(boxDom)
+			};
+		*/
+	</script>
+ </body>
+</html>

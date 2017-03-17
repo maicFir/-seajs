@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>seajs模块加载</title>
+  <!--
+	2017/3/5
+  -->
+ </head>
+ <body>
+	<script type="text/javascript" src="js/common/sea.js"></script>
+	<script type="text/javascript">
+		
+		/*
+		seajs.use('./js/demo1.js',function(req){
+			var tt = req.say();
+			console.log(tt);
+		});
+		seajs.use("./js/main.js");
+		*/
+		//配置,设置别名
+		seajs.config({
+			alias:{
+				"demo1":"./js/demo1.js",
+				"b":"./js/b.js",
+				'main':"./js/main.js"
+			}
+			
+		});
+		seajs.use(["demo1","b"],function(demo1,b){
+			var tt = demo1.say();
+			console.log(tt);
+			seajs.use("main");	
+		});
+		
+		
+	</script>
+ </body>
+</html>
